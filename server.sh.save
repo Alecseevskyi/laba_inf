@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "server is running on port 12345"
+echo "waiting foe messadges..."
+echo "for exit press ctrl+c"
+
+while true; do
+	read message
+	echo "message recieved"
+done | nc -l 12345
+
