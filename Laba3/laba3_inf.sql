@@ -1,11 +1,3 @@
--- Полный код для создания и наполнения базы данных laba3_inf
-
--- Удаление существующих таблиц (если нужно пересоздать)
-DROP TABLE IF EXISTS borrowed_books CASCADE;
-DROP TABLE IF EXISTS books CASCADE;
-DROP TABLE IF EXISTS users CASCADE;
-DROP TABLE IF EXISTS authors CASCADE;
-
 -- 1. Создание таблиц
 
 -- Таблица авторов
@@ -356,4 +348,5 @@ FROM borrowed_books bb
 JOIN users u ON bb.user_id = u.id
 JOIN books b ON bb.book_id = b.id
 JOIN authors a ON b.author_id = a.id
+
 WHERE bb.return_date IS NULL;
